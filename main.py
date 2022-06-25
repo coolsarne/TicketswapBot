@@ -11,13 +11,13 @@ def main():
 
     settings = util.get_settings()
     ticket = settings['ticket']
-    login = settings['login']
     notification = settings['notification']
     logging.info("Retrieved data from json file")
 
     bot = Bot(ticket["magicLink"].strip())
     logging.info("Initialized a bot instance")
 
+    time.sleep(2)
     bot.go_to_start_page()
     time.sleep(2)
     bot.go_to_festival_page(ticket['festivalName'].strip())
@@ -35,7 +35,7 @@ def main():
     bot.reserve_ticket()
 
     logging.info("Dialing user")
-    bot.dial_number(notification["twilioPhone"], notification["phone"], notification["sid"], notification["token"])
+    # bot.dial_number(notification["twilioPhone"], notification["phone"], notification["sid"], notification["token"])
 
     logging.info("Waiting for checkout completion")
     time.sleep(900)

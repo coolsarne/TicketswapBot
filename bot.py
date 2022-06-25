@@ -33,6 +33,10 @@ class Bot:
         item = self.webdriver.find_element_by_visible_text(item_name)
         return self.webdriver.click_on_element(item)
 
+    def select_item_strict(self, item_name):
+        item = self.webdriver.find_element_by_visible_text_strict(item_name)
+        return self.webdriver.click_on_element(item)
+
     def select_item_by_x_path(self, item_x_path):
         item = self.webdriver.find_element_by_x_path(item_x_path)
         return self.webdriver.click_on_element(item)
@@ -58,7 +62,8 @@ class Bot:
 
     def reserve_ticket(self):
         self.select_item_by_x_path("/html/body/div[1]/div[2]/div[3]/a[1]")
-        self.select_item_by_x_path("/html/body/div[1]/div[2]/div[1]/div[1]/div/div/form/div[3]/button")
+        time.sleep(0.355)
+        self.select_item_by_x_path('//*[text()="Koop ticket"]')
 
     def dial_number(self, twilioNumber, number, sid, token):
         TWIML_INSTRUCTIONS_URL = \
