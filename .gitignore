@@ -1,6 +1,7 @@
 # Manually added to template
 .idea
 chromedriver.exe
+settings.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
