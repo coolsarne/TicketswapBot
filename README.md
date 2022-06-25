@@ -2,7 +2,8 @@
 Bot for ticketswap.be that allows users to reserve tickets for festivals,...  
 Bot automatically checks for tickets  
 Bot sends notification when ticket is reserved  
-Bot doesn't auto checkout
+Bot doesn't auto checkout  
+Bot doesn't confirm email address for login by itself
 
 ## Requirements
 - Python 3
@@ -36,12 +37,13 @@ Bot doesn't auto checkout
     {
         "ticket": {
             "eventLink": "",                 -- link to ticket overview page of event
+            "otherCategory": "",             -- if ticket is not in default list, but in 'others' or 'overig', fill 
+                                                this category in here, if not, leave empty
             "ticketName": "",                -- full name of ticket as shown in overview page
             "amount": 1                      -- preffered amount of tickets to buy (at least 1)
         },
         "login": {
-            "email": "",                     -- email address used to login, Make sure its a valid google login
-            "password": ""                   -- password for google login
+            "email": "",                     -- email address used to login, make sure its already registered
         },
         "notification": {
             "email": "",                     -- email address to send notification to when ticket is reserved
