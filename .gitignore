@@ -1,3 +1,7 @@
+# Manually added to template
+.idea
+chromedriver.exe
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,17 @@
+{
+    "ticket": {
+        "eventLink": "",
+        "ticketName": "",
+        "amount": 1
+    },
+    "login": {
+        "email": "",
+        "password": ""
+    },
+    "notification": {
+        "email": "",
+        "phone": ""
+    }
+}
+
+
