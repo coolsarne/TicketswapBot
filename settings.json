@@ -1,17 +1,14 @@
 {
     "ticket": {
-        "eventLink": "",
-        "ticketName": "",
-        "amount": 1
-    },
-    "login": {
-        "email": "",
-        "password": ""
+        "magicLink": "",
+        "festivalName": "",
+        "otherCategory": "",
+        "ticketName": ""
     },
     "notification": {
-        "email": "",
+        "sid": "",
+        "token": "",
+        "twilioPhone": "",
         "phone": ""
     }
 }
-
-
