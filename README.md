@@ -36,17 +36,16 @@ Bot doesn't confirm email address for login by itself
     ```  
     {
         "ticket": {
-            "eventLink": "",                 -- link to ticket overview page of event
+            "magicLink": "",                 -- link to overview page of ticketswap
+            "festivalName": "",              -- name of festival
             "otherCategory": "",             -- if ticket is not in default list, but in 'others' or 'overig', fill 
                                                 this category in here, if not, leave empty
-            "ticketName": "",                -- full name of ticket as shown in overview page
-            "amount": 1                      -- preffered amount of tickets to buy (at least 1)
-        },
-        "login": {
-            "email": "",                     -- email address used to login, make sure its already registered
+            "ticketName": ""                 -- full name of ticket as shown in overview page
         },
         "notification": {
-            "email": "",                     -- email address to send notification to when ticket is reserved
+            "sid": ""                        -- sid of twilio account
+            "token": ""                      -- twilio account token
+            "twilioPhone": ""                -- twilio phone number to call from
             "phone": ""                      -- phone number to call when ticket is reserved
         }
     }
