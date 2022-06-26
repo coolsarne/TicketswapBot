@@ -22,7 +22,7 @@ Bot doesn't confirm email address for login by itself
     $ pip3 install -r requirements.txt   
     ```
 
-3. Download [ChromDriver](https://chromedriver.chromium.org/downloads) for your version of Google Chrome, extract the executable, and place it in the root directory:
+3. Download [ChromeDriver](https://chromedriver.chromium.org/downloads) for your version of Google Chrome, extract the executable, and place it in the root directory:
 
     ```
     TicketswapBot/
@@ -55,4 +55,4 @@ Bot doesn't confirm email address for login by itself
    ```
    $ python3 main.py
    ```
-   \* To avoid accidental charges, payment info needs to be filled in **manually**
+6. To avoid accidental charges, payment info needs to be filled in **manually**
