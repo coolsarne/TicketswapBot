@@ -30,11 +30,7 @@ class Bot:
         return self.webdriver.get_current_url() == self.start_page_url
 
     def select_item(self, item_name):
-        item = self.webdriver.find_element_by_visible_text(item_name)
-        return self.webdriver.click_on_element(item)
-
-    def select_item_strict(self, item_name):
-        item = self.webdriver.find_element_by_visible_text_strict(item_name)
+        item = self.webdriver.find_element_by_x_path(f'//*[text()="{item_name}"]')
         return self.webdriver.click_on_element(item)
 
     def select_item_by_x_path(self, item_x_path):
@@ -43,20 +39,21 @@ class Bot:
 
     def go_to_ticket_page(self, otherCategory, ticketName):
         if otherCategory == "":
-            self.select_item(ticketName)
+            self.select_item_by_x_path(f'//*[text()="{ticketName}"]')
         else:
             self.select_item(otherCategory)
-            self.select_item(ticketName)
+            time.sleep(1)
+            self.select_item_by_x_path(f'//*[text()="{ticketName}"]')
 
     def find_available(self):
         try:
-            self.webdriver.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[4]/span")
+            self.webdriver.driver.find_element_by_xpath('//*[text()="Er worden op dit moment geen tickets aangeboden."]')
         except NoSuchElementException:
             return True
         return False
 
     def refresher(self):
-        random_decimal = random.randint(40000, 120000) / 10000
+        random_decimal = random.randint(40000, 80000) / 10000
         time.sleep(random_decimal)
         self.refresh()
 
