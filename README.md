@@ -9,6 +9,7 @@ Bot doesn't confirm email address for login by itself
 - Python 3
 - Google Chrome
 - ChromeDriver
+- Twilio account
 
 ## Usage
 1. Clone the project:
