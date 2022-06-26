@@ -18,13 +18,19 @@ def main():
     logging.info("Initialized a bot instance")
 
     time.sleep(2)
+    logging.info("Navigating to start page")
     bot.go_to_start_page()
-    time.sleep(2)
-    bot.go_to_festival_page(ticket['festivalName'].strip())
-    time.sleep(2)
-    bot.go_to_ticket_page(ticket["otherCategory"].strip(), ticket["ticketName"].strip())
-    time.sleep(2)
 
+    time.sleep(2)
+    logging.info("Navigating to festival page")
+    bot.go_to_festival_page(ticket['festivalName'].strip())
+
+    time.sleep(2)
+    logging.info("Navigating to ticket page")
+    bot.go_to_ticket_page(ticket["otherCategory"].strip(), ticket["ticketName"].strip())
+
+    time.sleep(2)
+    logging.info("Starting to look for available tickets")
     while bot.find_available() is False:
         logging.warning("No tickets found, trying again...")
         bot.refresher()
@@ -35,12 +41,11 @@ def main():
     bot.reserve_ticket()
 
     logging.info("Dialing user")
-    # bot.dial_number(notification["twilioPhone"], notification["phone"], notification["sid"], notification["token"])
+    bot.dial_number(notification["twilioPhone"], notification["phone"], notification["sid"], notification["token"])
 
     logging.info("Waiting for checkout completion")
-    time.sleep(900)
+    time.sleep(900) # 15 minutes of buffer time to complete checkout
 
-    # 15 minutes of buffer time to complete checkout
     logging.info("Closing bot")
     bot.quit()
 
